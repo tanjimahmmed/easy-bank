@@ -21,7 +21,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 p {
     line-height: 1.4;
 }
-body {
+.root {
     overflow-x: hidden;
 }
 img {
@@ -33,7 +33,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    /* padding: 20px 0; */
+    height: 60px;
 }
 nav ul {
     display: flex;
@@ -144,7 +145,7 @@ nav ul li a:hover {
 .pros-section h1 {
     margin-bottom: 20px;
 }
-.pros-section p {
+.pros-section p.section_title {
     margin-bottom: 60px;
     color: var(--grayish-blue);
 }
@@ -181,6 +182,9 @@ nav ul li a:hover {
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+.article-card {
+    background: var(--white);
 }
 .article-wrapper .content {
     background: var(--white);
@@ -243,4 +247,153 @@ footer .footer-cta {
 footer .copyright {
     color: var(--grayish-blue);
     margin-top: 30px;
+}
+
+.hamburger_btn {
+    display: none;
+}
+
+/* Responsive */
+@media(max-width: 1198px) {
+    .card-wrapper, .article-wrapper {
+        flex-wrap: wrap;
+    }
+    .card-wrapper .card {
+        flex: 1 0 40%;
+        margin-bottom: 30px;
+    }
+    .card-wrapper .card:nth-child(odd) {
+        margin-left: 0;
+    }
+    .article-wrapper .article-card {
+        flex: 1 0 40%;
+        margin-bottom: 30px;
+    }
+    .article-wrapper .article-card:nth-child(odd) {
+        margin-left: 0;
+    }
+}
+@media(max-width: 998px) {
+    footer .content {
+        flex-wrap: wrap;
+    }
+    footer .content > * {
+        flex: 1 0 30%;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+    footer ul.social {
+        margin-top: 30px;
+    }
+    footer .footer-cta {
+        margin-bottom: 0;
+    }
+}
+@media(max-width: 870px) {
+    .hamburger_btn {
+        display: block;
+    }
+    .nav_links {
+        position: fixed;
+        top: 80px;
+        left: -500px;
+        transform: translateX(-50%);
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        padding: 20px 0;
+        box-shadow: 0px 30px 50px 5px #a0a0a0;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+}
+    .nav_links.open {
+        left: 50%;
+    }
+    .navbar_cta {
+        display: none;
+    }
+    .hamburger_btn {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+    }
+    .nav_links a {
+        color: var(--dark-blue);
+    }
+    .nav_links a:hover {
+        color: var(--line-green);
+    }
+    .nav_links li {
+        padding-bottom: 10px;
+        display: block;
+        margin-left: 0;
+    }
+    .nav_links li:last-child {
+        padding-bottom: 0px;
+    }
+    .header-text {
+        flex: 1 0 70%;
+    }
+    .header-images {
+        flex: 1 0 30%;
+    }
+    .header-wrap {
+        padding-top: 30px;
+    }
+    .header-images img:first-child {
+        right: -50px;
+    }
+    .header-images img:last-child {
+        top: -175px;
+        right: -72px;
+    }
+    .header-text h1 {
+        font-size: 30px;
+    }
+    .header-text p {
+        font-size: 16px;
+    }
+    .pros-section, .article-section {
+        padding: 30px 0;
+    }
+    .article-card h1 {
+        font-size: 24px;
+    }
+    .pros-section p.section_title {
+        font-size: 16px;
+    }
+
+}
+@media(max-width: 768px) {
+    footer .content > * {
+        flex: 1 0 100%;
+    }
+}
+@media(max-width: 580px) {
+    .card-wrapper .card {
+        flex: 1 0 100%;
+        margin-left: 0;
+    }
+    .article-wrapper .article-card {
+        flex: 1 0 100%;
+        margin-left: 0;
+    }
+    .article-wrapper .article-card:last-child {
+        margin-bottom: 0;
+    }
+    
 }
